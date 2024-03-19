@@ -58,6 +58,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 flatpak install flathub io.github.flattool.Warehouse -y # Flatpak Warehouse (Flatpak GUI)
 flatpak install flathub com.github.tchx84.Flatseal -y # Flatseal (Flatpak permissions manager)
 flatpak install flathub org.kde.filelight -y # Filelight (Disk usage analyzer)
+flatpak install flathub org.gnome.World.PikaBackup
 # Utilities
 flatpak install flathub io.github.prateekmedia.appimagepool -y # AppImage Pool (AppImage manager)
 flatpak install flathub org.qbitorrent.qBittorrent -y # qBittorrent
@@ -150,7 +151,27 @@ cd ~/Downloads
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FantasqueSansMono.zip
 unzip FantasqueSansMono.zip
 cp ~/Downloads/FantasqueSansMono/*.ttf ~/.local/share/fonts
+cd ~
 # Change the font
+
+
+# Install Firefox extensions
+# Bitwarden
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/"
+# Raindrop.io
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/raindropio/"
+# uBlock Origin
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
+# Privacy Badger
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/"
+# DuckDuckGo Privacy Essentials
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/"
+# WakaTime
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/wakatimes/"
+# Material Icons for GitHub
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/material-icons-for-github/"
+# GitHub Dracula Theme
+firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/github-dracula-theme/"
 
 
 # FUTURE
