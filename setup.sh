@@ -12,7 +12,39 @@ sudo journalctl --vacuum-time=3d
 sudo apt install -y build-essential procps curl file git wget htop net-tools nmap brightnessctl suckless-tools tree autorandr openssh-server
 
 # Install the basic development packages
-sudo apt install -y python3 python3-pip python-is-python3 docker jq nodejs npm pandoc texlive texlive-xetex
+sudo apt install -y python3 python3-pip python-is-python3 jq nodejs npm pandoc texlive texlive-xetex
+
+# Install Docker
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+# Add the repository to Apt sources:
+echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+# sudo docker run hello-world
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+#docker run hello-world
+# sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
+# sudo chmod g+rwx "$HOME/.docker" -R
+
+# Configure Docker to start on boot
+# sudo systemctl enable docker.service
+# sudo systemctl enable containerd.service
+# Don't start Docker on boot
+# sudo systemctl disable docker.service
+# sudo systemctl disable containerd.service
+
+# Install Docker Compose
+# sudo apt install -y docker-compose
 
 # Install utils/ricing packages
 sudo apt install -y bat bspwm btop cava cmatrix fdupes feh gh neofetch kitty picom polybar pulsemixer ranger rofi sxhkd tmux tty-clock vim zsh
@@ -50,6 +82,7 @@ flatpak install flathub com.google.AndroidStudio -y # Android Studio
 flatpak install flathub com.github.huluti.Curtail -y # Curtail (Image compressor)
 flatpak install flathub com.github.gijsgoudzwaard.image-optimizer -y # Image Optimizer
 flatpak install flathub io.emeric.toolblex -y # toolBLEx (BLE scanner)
+flatpak install flathub com.github.sdv43.whaler -y # Whaler (Docker GUI)
 # Note taking
 flatpak install flathub com.github.xournalpp.xournalpp -y # Xournal++ (PDF annotator)
 flatpak install flathub net.ankiweb.Anki -y # Anki (Flashcards)
@@ -72,6 +105,9 @@ flatpak install flathub org.zaproxy.ZAP -y # OWASP ZAP
 flatpak install flathub net.werwolv.ImHex -y # ImHex (Hex editor)
 flatpak install flathub com.openwall.John -y # John the Ripper (Password cracker)
 flatpak install flathub org.ghidra_sre.Ghidra -y # Ghidra (Reverse engineering)
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
@@ -109,18 +145,19 @@ sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packa
 && sudo apt update \
 && sudo apt install gh -y
 
+# Install FantasqueSansM Nerd Font automatically
+cd ~/Downloads
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FantasqueSansMono.zip
+unzip FantasqueSansMono.zip
+cp ~/Downloads/FantasqueSansMono/*.ttf ~/.local/share/fonts
+# Change the font
+
 
 # FUTURE
 # Install other zsh plugins
 # Install Node.js packages
-# Install fonts 
-# FantasqueSansM Nerd Font
 # conky neovim playerctl pv riseup nvtop 
 # sudo apt install -y balena-etcher
 # https://www.kali.org/tools/
 # https://docs.flutter.dev/get-started/install/linux
 # https://go.dev/doc/install
-# VSCode extensions
-# VSCode settings
-# themes
-# oh-my-zsh
