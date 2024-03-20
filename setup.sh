@@ -1,184 +1,43 @@
-# Update the system
-sudo apt update
-sudo apt upgrade -y
-sudo apt dist-upgrade -y
-sudo apt autoremove
-sudo apt clean
+#!/bin/bash
 
-# Set journalctl to use less space
-sudo journalctl --vacuum-time=3d
+## Check if user is in sudo group
 
-# Install the basic packages
-sudo apt install -y build-essential procps curl file git wget htop net-tools nmap brightnessctl suckless-tools tree autorandr openssh-server
+## Add contrib non-free after main
+# sudo nano /etc/apt/sources.list
+# sudo apt update
+# sudo apt upgrade
+# sudo reboot
 
-# Install the basic development packages
-sudo apt install -y python3 python3-pip python-is-python3 jq nodejs npm pandoc texlive texlive-xetex
+## Set up ufw firewall
 
-# Install Docker
-# Add Docker's official GPG key:
-sudo apt-get update
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-# Add the repository to Apt sources:
-echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
-    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-# sudo docker run hello-world
-sudo groupadd docker
-sudo usermod -aG docker $USER
-newgrp docker
-#docker run hello-world
-# sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-# sudo chmod g+rwx "$HOME/.docker" -R
+## Set journalctl to use less space
+# sudo journalctl --vacuum-time=3d
 
-# Configure Docker to start on boot
-# sudo systemctl enable docker.service
-# sudo systemctl enable containerd.service
-# Don't start Docker on boot
-# sudo systemctl disable docker.service
-# sudo systemctl disable containerd.service
+## Change the delay value to 0 seconds, by setting GRUB_TIMEOUT=2
+# sudo nano /etc/default/grub
+# sudo update-grub
 
-# Install Docker Compose
-# sudo apt install -y docker-compose
+## Enable universe and multiverse repositories
+# sudo add-apt-repository universe
+# sudo add-apt-repository multiverse
+# sudo apt update
 
-# Install utils/ricing packages
-sudo apt install -y bat bspwm btop cava cmatrix fdupes feh gh neofetch kitty picom polybar pulsemixer ranger rofi sxhkd tmux tty-clock vim zsh
+## Set up Git username and email
+# git config --global user.name "my-username"
+# git config --global user.email "my@email"
 
-# Flatpak set up
-sudo apt install -y flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+## Install the restricted extras (codecs, etc.)
+# sudo apt-get install ubuntu-restricted-extras
 
-# Install flatpak packages
-# Flatpak basic packages
-flatpak install flathub io.github.flattool.Warehouse -y # Flatpak Warehouse (Flatpak GUI)
-flatpak install flathub com.github.tchx84.Flatseal -y # Flatseal (Flatpak permissions manager)
-flatpak install flathub org.kde.filelight -y # Filelight (Disk usage analyzer)
-flatpak install flathub org.gnome.World.PikaBackup
-# Utilities
-flatpak install flathub io.github.prateekmedia.appimagepool -y # AppImage Pool (AppImage manager)
-flatpak install flathub org.qbitorrent.qBittorrent -y # qBittorrent
-flatpak install flathub com.ktechpit.torrhunt -y # TorrHunt (Torrent search)
-flatpak install flathub org.libreoffice.LibreOffice -y # LibreOffice
-flatpak install flathub org.videolan.VLC -y # VLC
-flatpak install flathub app.moosync.moosync -y # Moosync (Music player)
-flatpak install flathub org.gnome.Cheese -y # Cheese (Webcam app)
-flatpak install flathub page.codeberg.libre_menu_editor.LibreMenuEditor -y # LibreMenuEditor (Menu editor)
-flatpak install flathub org.kde.dolphin -y # Dolphin (File manager)
-# Browsers
-flatpak install flathub org.mozilla.firefox -y # Firefox
-flatpak install flathub org.torproject.torbrowser-launcher -y # Tor Browser
-flatpak install flathub org.onionshare.OnionShare -y # OnionShare
-flatpak install flathub org.chromium.Chromium -y # Chromium
-flatpak install flathub com.google.Chrome -y # Google Chrome
-flatpak install flathub com.google.ChromeDev -y # Google Chrome Dev
-# Development
-flatpak install flathub com.visualstudio.code -y # VSCode
-flatpak install flathub com.jetbrains.PyCharm-Professional -y # PyCharm
-flatpak install flathub com.google.AndroidStudio -y # Android Studio
-flatpak install flathub com.github.huluti.Curtail -y # Curtail (Image compressor)
-flatpak install flathub com.github.gijsgoudzwaard.image-optimizer -y # Image Optimizer
-flatpak install flathub io.emeric.toolblex -y # toolBLEx (BLE scanner)
-flatpak install flathub com.github.sdv43.whaler -y # Whaler (Docker GUI)
-# Note taking
-flatpak install flathub com.github.xournalpp.xournalpp -y # Xournal++ (PDF annotator)
-flatpak install flathub net.ankiweb.Anki -y # Anki (Flashcards)
-flatpak install flathub io.appflowy.AppFlowy -y # AppFlowy (Note taking app)
-flatpak install flathub net.giuspen.cherrytree -y # CherryTree (Note taking app)
-flatpak install flathub net.sourceforge.jpdftweak.jPdfTweak -y # jPdfTweak (PDF editor)
-# Other
-flatpak install flathub com.rafaelmardojai.Blanket -y # Blanket (Background noise app)
-flatpak install flathub com.github.miguelmota.Cointop -y # Cointop (Cryptocurrency tracker)
-flatpak install flathub org.raspberrypi.rpi-imager -y # Raspberry Pi Imager
-# Social
-flatpak install flathub com.github.IsmaelMartinez.teams_for_linux -y # Microsoft Teams
-flatpak install flathub com.discordapp.Discord -y # Discord
-flatpak install flathub org.telegram.desktop -y # Telegram
-flatpak install flathub com.spotify.Client -y # Spotify
-# Hacking
-flatpak install flathub org.wireshark.Wireshark -y # Wireshark
-flatpak install flathub org.nmap.Zenmap -y # Zenmap
-flatpak install flathub org.zaproxy.ZAP -y # OWASP ZAP
-flatpak install flathub net.werwolv.ImHex -y # ImHex (Hex editor)
-flatpak install flathub com.openwall.John -y # John the Ripper (Password cracker)
-flatpak install flathub org.ghidra_sre.Ghidra -y # Ghidra (Reverse engineering)
+## Set up regular backups
 
-# Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+## Change passwords
 
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+## Set up SSH keys
 
-# Install Rust packages
-cargo install erdtree # alternative to tree
-cargo install exa # alternative to ls
-cargo install fd-find # alternative to find
+## Set up TLP
+# sudo apt update
+# sudo apt install tlp tlp-rdw
+# sudo tlp start
 
-# Install Spicetify (Spotify customizer)
-curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
-curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
-
-# Install lazydocker (Docker GUI)
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-
-# Install from GitHub repositories
-mkdir cloned && cd cloned
-
-# Install fzf (fuzzy finder)
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
-# Install zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# Add zsh-autosuggestions to the plugins array in .zshrc
-
-# Install zsh-syntax-highlighting
-# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-
-# Install GitHub CLI
-sudo mkdir -p -m 755 /etc/apt/keyrings && wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
-&& sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
-&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
-&& sudo apt update \
-&& sudo apt install gh -y
-
-# Install FantasqueSansM Nerd Font automatically
-cd ~/Downloads
-wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/FantasqueSansMono.zip
-unzip FantasqueSansMono.zip
-cp ~/Downloads/FantasqueSansMono/*.ttf ~/.local/share/fonts
-cd ~
-# Change the font
-
-
-# Install Firefox extensions
-# Bitwarden
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager/"
-# Raindrop.io
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/raindropio/"
-# uBlock Origin
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/"
-# Privacy Badger
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/privacy-badger17/"
-# DuckDuckGo Privacy Essentials
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/duckduckgo-for-firefox/"
-# WakaTime
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/wakatimes/"
-# Material Icons for GitHub
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/material-icons-for-github/"
-# GitHub Dracula Theme
-firefox --new-tab "https://addons.mozilla.org/en-US/firefox/addon/github-dracula-theme/"
-
-
-# FUTURE
-# Install other zsh plugins
-# Install Node.js packages
-# conky neovim playerctl pv riseup nvtop 
-# sudo apt install -y balena-etcher
-# https://www.kali.org/tools/
-# https://docs.flutter.dev/get-started/install/linux
-# https://go.dev/doc/install
+# sudo dpkg-reconfigure --priority=low unattended-upgrades

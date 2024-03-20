@@ -1,0 +1,1 @@
+flatpak uninstall --unused
