@@ -1,0 +1,20 @@
+[opener]
+pdf = [
+    { run = 'zathura "$@"', orphan = true, desc = "open with zathura" }
+]
+video = [
+    { run = 'mpv "$@"', orphan = true, desc = "open with mpv" }
+]
+image = [
+    { run = 'imv "$@"', orphan = true, desc = "open with imv" }
+]
+
+[open]
+prepend_rules = [
+    { mime = "application/pdf", use = "pdf" },
+    { mime = "video/*", use = "video" },
+    { mime = "image/*", use = "image" },
+]
+
+[mgr]
+ratio = [0, 1, 2]

@@ -1,0 +1,18 @@
+set zoom-center true
+set scroll-step 50
+
+set recolor false
+set recolor-keephue true
+
+set default-bg "#000000"
+set default-fg "#c0caf5"
+set recolor-lightcolor "#000000"
+set recolor-darkcolor "#c0caf5"
+set statusbar-bg "#1a1b26"
+set statusbar-fg "#c0caf5"
+set inputbar-bg "#1a1b26"
+set inputbar-fg "#c0caf5"
+set completion-bg "#1a1b26"
+set completion-fg "#c0caf5"
+set completion-highlight-bg "#33467C"
+set completion-highlight-fg "#c0caf5"

@@ -1,0 +1,27 @@
+[global]
+    font = JetBrainsMono Nerd Font 10
+    frame_width = 1
+    separator_color = frame
+    corner_radius = 0
+    origin = bottom-right
+    offset = 10x44
+    frame_color = "#ffffff"
+    gap_size = 0
+
+[urgency_low]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#333333"
+    timeout = 5
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"
+    timeout = 10
+
+[urgency_critical]
+    background = "#000000"
+    foreground = "#ffffff"
+    frame_color = "#ffffff"
+    timeout = 0
