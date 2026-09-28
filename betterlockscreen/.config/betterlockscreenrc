@@ -1,0 +1,41 @@
+display_on=0
+span_image=false
+lock_timeout=300
+fx_list=(dim blur dimblur pixel dimpixel color)
+dim_level=40
+blur_level=2
+pixel_scale=10,1000
+solid_color=282828
+wallpaper_cmd="feh --bg-fill"
+quiet=false
+
+loginbox=00000000
+loginshadow=00000000
+locktext=""
+font="JetBrainsMono Nerd Font"
+
+
+ringcolor=ebdbb2ff
+insidecolor=00000000
+separatorcolor=00000000
+
+keyhlcolor=b8bb26ff
+bshlcolor=fb4934ff
+
+ringvercolor=fabd2fff
+insidevercolor=00000000
+veriftext="Checking"
+verifcolor=fabd2fff
+
+ringwrongcolor=fb4934ff
+insidewrongcolor=00000000
+wrongtext="Try again"
+wrongcolor=fb4934ff
+
+timecolor=ffffffff
+time_format="%H:%M"
+greetercolor=282828ff
+layoutcolor=282828ff
+modifcolor=fe8019ff
+
+bgcolor=282828ff
