@@ -6,11 +6,13 @@ from libqtile.lazy import lazy
 
 from settings import colors, bg
 
+
 def check_bluetooth():
     try:
         out = subprocess.check_output(
             ["bluetoothctl", "devices", "Connected"],
-            text=True, stderr=subprocess.DEVNULL
+            text=True,
+            stderr=subprocess.DEVNULL,
         ).strip()
         if out:
             name = " ".join(out.splitlines()[0].split()[2:])
@@ -18,6 +20,7 @@ def check_bluetooth():
         return "BLUETOOTH off"
     except Exception:
         return "BLUETOOTH --"
+
 
 screens = [
     Screen(
@@ -47,7 +50,11 @@ screens = [
                 ),
                 widget.Spacer(length=bar.STRETCH),
                 widget.GenPollText(
-                    func=lambda: "CAFFEINE on" if os.path.exists("/tmp/caffeine_active") else "CAFFEINE off",
+                    func=lambda: (
+                        "CAFFEINE on"
+                        if os.path.exists("/tmp/caffeine_active")
+                        else "CAFFEINE off"
+                    ),
                     update_interval=1,
                 ),
                 widget.Spacer(length=12),
@@ -90,7 +97,5 @@ screens = [
             background=colors["bg"],
             border_width=[0, 0, 0, 0],
         ),
-        wallpaper=bg,
-        wallpaper_mode="fill",
     ),
 ]

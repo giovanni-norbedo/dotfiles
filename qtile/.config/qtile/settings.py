@@ -18,5 +18,3 @@ widget_defaults = dict(
     foreground=colors["fg"],
 )
 extension_defaults = widget_defaults.copy()
-
-bg = os.path.join(os.environ["HOME"], ".wp", "poi_city.png")

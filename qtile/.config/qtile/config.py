@@ -18,4 +18,5 @@ focus_previous_on_window_remove = False
 reconfigure_screens = True
 auto_minimize = True
 idle_inhibitors: list = []
-wmname = "LG3D"
+wmname = "qtile"
+

@@ -15,3 +15,5 @@ greenclip daemon &
 xsetroot -cursor_name left_ptr &
 
 touchegg &
+
+feh --bg-fill ~/.wp/oled.png &
