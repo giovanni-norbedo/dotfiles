@@ -28,8 +28,8 @@ symbol = "az "
 
 [battery]
 full_symbol = "full "
-charging_symbol = "charging "
-discharging_symbol = "discharging "
+charging_symbol = "+ "
+discharging_symbol = "- "
 unknown_symbol = "unknown "
 empty_symbol = "empty "
 
