@@ -11,14 +11,20 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
   pattern = { "*.pdf", "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" },
   callback = function(opts)
     local ext = opts.file:match("^.+%.(.+)$"):lower()
-    
+
     if ext == "pdf" then
       vim.fn.jobstart({ "zathura", opts.file }, { detach = true })
     else
       vim.fn.jobstart({ "imv", opts.file }, { detach = true })
     end
-    
+
     vim.api.nvim_buf_delete(opts.buf, { force = true })
   end,
   desc = "Open PDF and Images in external apps",
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+  pattern = "*",
+  command = "silent! write",
+  desc = "Autosave",
 })

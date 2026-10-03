@@ -62,8 +62,8 @@ keys = [
     Key(
         [mod],
         "c",
-        lazy.spawn("bash -l -c 'env WINIT_X11_SCALE_FACTOR=1 neovide'"),
-        desc="open neovide",
+        lazy.spawn("positron"),
+        desc="open positron",
     ),
     Key([mod, "shift"], "c", lazy.spawn("code"), desc="open vscode"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="open obsidian"),
