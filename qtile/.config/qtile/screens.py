@@ -4,7 +4,7 @@ from libqtile import bar, widget
 from libqtile.config import Screen
 from libqtile.lazy import lazy
 
-from settings import colors, bg
+from settings import colors
 
 
 def check_bluetooth():

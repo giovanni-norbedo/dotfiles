@@ -86,6 +86,7 @@ alias vi="nvim"
 alias vim="nvim"
 
 alias myip="curl -s wtfismyip.com/json | jq -r 'to_entries | .[] | \"\(.key | sub(\"YourFucking\"; \"\")):\t\(.value)\"' | column -t -s $'\t'"
+alias cl='fc -s 2>&1 | xclip -selection clipboard'
 
 alias enable-store='adb shell cmd package install-existing com.android.vending && echo "Play Store enabled!"'
 alias disable-store='adb shell pm uninstall -k --user 0 com.android.vending && echo "Play Store disabled!"'
@@ -143,10 +144,13 @@ zmd() {
     fi
 }
 
-if command -v fastfetch &> /dev/null; then
-    fastfetch
-fi
+# if command -v fastfetch &> /dev/null; then
+#     fastfetch
+# fi
 
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
+
+# tmp
+alias statquest='mpv "https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF"'

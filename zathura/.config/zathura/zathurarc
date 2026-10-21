@@ -1,5 +1,4 @@
-set zoom-center true
-set scroll-step 50
+set guioptions "sh"
 
 set recolor false
 set recolor-keephue true

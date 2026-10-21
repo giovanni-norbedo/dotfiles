@@ -1,7 +1,10 @@
 [Default Applications]
+# firefox
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/chrome=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
 text/html=firefox.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
@@ -9,43 +12,43 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-inode/directory=yazi-kitty.desktop
-application/pdf=org.pwmt.zathura.desktop
+
+# images
 image/png=imv-dir.desktop
 image/jpeg=imv-dir.desktop
 image/jpg=imv.desktop
-video/mp4=firefox.desktop
-video/x-matroska=mpv.desktop
-text/x-python=codium.desktop
 image/webp=imv-dir.desktop
-x-scheme-handler/readest=readest-handler.desktop
+image/gif=imv-dir.desktop
+image/svg+xml=imv-dir.desktop
+
+# videos
+video/mp4=mpv.desktop
+video/x-matroska=mpv.desktop
+video/webm=mpv.desktop
+audio/mpeg=mpv.desktop
+audio/flac=mpv.desktop
+audio/x-wav=mpv.desktop
+
+# directory and docs
+inode/directory=yazi-kitty.desktop
+application/pdf=org.pwmt.zathura.desktop
+
+# erchives
 application/zip=thunar.desktop
-x-scheme-handler/antigravity=antigravity.desktop
+application/x-tar=thunar.desktop
+application/x-compressed-tar=thunar.desktop
+application/x-gzip=thunar.desktop
+
+# text and code
+text/plain=org.xfce.mousepad.desktop
 text/markdown=codium.desktop
-text/x-r-markdown=rstudio.desktop
-x-scheme-handler/about=firefox.desktop
-x-scheme-handler/unknown=firefox.desktop
+text/csv=codium.desktop
+application/json=codium.desktop
+application/x-yaml=codium.desktop
+application/x-shellscript=codium.desktop
+text/x-python=positron.desktop
+text/x-r-markdown=positron.desktop
+text/x-rsrc=positron.desktop
 
 [Added Associations]
-x-scheme-handler/http=firefox.desktop;zen.desktop;
-x-scheme-handler/https=firefox.desktop;zen.desktop;
-x-scheme-handler/chrome=firefox.desktop;zen.desktop;
-text/html=zen.desktop;firefox.desktop;
-application/x-extension-htm=zen.desktop;firefox.desktop;
-application/x-extension-html=zen.desktop;firefox.desktop;
-application/x-extension-shtml=zen.desktop;firefox.desktop;
-application/xhtml+xml=zen.desktop;firefox.desktop;
-application/x-extension-xhtml=zen.desktop;firefox.desktop;
-application/x-extension-xht=zen.desktop;firefox.desktop;
-text/x-python=codium.desktop;
-image/png=imv-dir.desktop;
-image/webp=imv-dir.desktop;
-text/x-patch=nvim.desktop;
-application/zip=thunar.desktop;kitty.desktop;kitty-open.desktop;xterm.desktop;
-text/markdown=codium.desktop;
-text/x-r-markdown=rstudio.desktop;
-application/pdf=firefox.desktop;
-video/mp4=firefox.desktop;
-image/gif=firefox.desktop;
-video/matroska=mpv.desktop;
-image/jpeg=com.google.Chrome.desktop;imv-dir.desktop;
+
