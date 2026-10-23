@@ -62,10 +62,10 @@ keys = [
     Key(
         [mod],
         "c",
-        lazy.spawn("positron"),
-        desc="open positron",
+        lazy.spawn("code"),
+        desc="open vscode",
     ),
-    Key([mod, "shift"], "c", lazy.spawn("code"), desc="open vscode"),
+    Key([mod, "shift"], "c", lazy.spawn("positron"), desc="open positron"),
     Key([mod], "o", lazy.spawn("obsidian"), desc="open obsidian"),
     Key(
         [mod],
