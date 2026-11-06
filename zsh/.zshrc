@@ -90,6 +90,8 @@ alias cl='fc -s 2>&1 | xclip -selection clipboard'
 
 alias enable-store='adb shell cmd package install-existing com.android.vending && echo "Play Store enabled!"'
 alias disable-store='adb shell pm uninstall -k --user 0 com.android.vending && echo "Play Store disabled!"'
+alias enable-settings='adb shell pm unsuspend com.android.settings && echo "Settings enabled (unsuspended)!"'
+alias disable-settings='adb shell pm suspend com.android.settings && echo "Settings disabled (suspended)!"'
 
 alias reload='source ~/.zshrc && echo "Config reloaded."'
 alias info="dashboard.py"

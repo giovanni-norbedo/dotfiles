@@ -15,8 +15,8 @@ cursor_warp = False
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 focus_previous_on_window_remove = False
+follow_mouse_focus = True
 reconfigure_screens = True
 auto_minimize = True
 idle_inhibitors: list = []
 wmname = "qtile"
-
