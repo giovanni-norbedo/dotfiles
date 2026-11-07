@@ -2,6 +2,8 @@
 
 ![](out.png)
 
+![](eink.png)
+
 ```bash
 git clone https://github.com/giovanni-norbedo/dotfiles.git
 cd dotfiles
