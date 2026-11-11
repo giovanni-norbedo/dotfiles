@@ -57,10 +57,10 @@ if command -v atuin >/dev/null 2>&1; then
     eval "$(atuin init zsh --disable-up-arrow)"
 fi
 
-alias ls='eza --icons --group-directories-first'
-alias ll='eza -alF --icons --group-directories-first --git'
-alias la='eza -a --icons --group-directories-first'
-alias lt='eza --tree --level=2 --icons'
+alias ls='eza --hyperlink=auto --icons --group-directories-first'
+alias ll='eza --hyperlink=auto -alF --icons --group-directories-first --git'
+alias la='eza --hyperlink=auto -a --icons --group-directories-first'
+alias lt='eza --hyperlink=auto --tree --level=2 --icons'
 
 alias cp='cp -i'
 alias mv='mv -i'
