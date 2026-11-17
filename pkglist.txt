@@ -75,6 +75,7 @@ guvcview
 gvfs
 helm
 hplip
+htmlq
 htop
 imagemagick
 imv
@@ -122,8 +123,8 @@ ncdu
 neovide
 neovim
 nerdfetch
-networkmanager
 network-manager-applet
+networkmanager
 ninja
 noto-fonts-emoji
 npm

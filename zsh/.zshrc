@@ -1,9 +1,11 @@
+typeset -U path PATH
 export PATH="/usr/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.elan/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
 export PATH="$HOME/flutter/bin:$PATH"
+export PATH="$HOME/.foundry/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -146,9 +148,9 @@ zmd() {
     fi
 }
 
-# if command -v fastfetch &> /dev/null; then
-#     fastfetch
-# fi
+if command -v fastfetch &> /dev/null; then
+    fastfetch
+fi
 
 if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

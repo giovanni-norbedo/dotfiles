@@ -1,6 +1,2 @@
-export PATH="/home/venpy/flutter/flutter/bin:$PATH"
-
-# uv
-export PATH="/home/venpy/.local/bin:$PATH"
-
-export PATH="$PATH:/home/venpy/.foundry/bin"
+typeset -U path PATH
+export PATH="$HOME/.local/bin:$HOME/flutter/bin:$HOME/.foundry/bin:$PATH"

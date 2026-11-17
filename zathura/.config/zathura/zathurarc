@@ -2,6 +2,7 @@ set guioptions "sh"
 
 set recolor false
 set recolor-keephue true
+set selection-clipboard clipboard
 
 set default-bg "#000000"
 set default-fg "#c0caf5"
