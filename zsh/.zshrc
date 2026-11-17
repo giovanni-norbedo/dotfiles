@@ -4,12 +4,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.elan/bin:$PATH"
 export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/flutter/bin:$PATH"
 export PATH="$HOME/.foundry/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
-export CHROME_EXECUTABLE="/usr/sbin/google-chrome-unstable"
 
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -97,6 +95,8 @@ alias disable-settings='adb shell pm suspend com.android.settings && echo "Setti
 
 alias reload='source ~/.zshrc && echo "Config reloaded."'
 alias info="dashboard.py"
+alias schermo-on='xrandr --output HDMI-1 --auto --mode 1920x1080 --output eDP-1 --off'
+alias schermo-off='xrandr --output eDP-1 --auto --output HDMI-1 --off'
 
 extract () {
   if [ -f "$1" ] ; then
