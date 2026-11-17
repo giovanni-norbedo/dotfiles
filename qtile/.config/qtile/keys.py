@@ -120,12 +120,6 @@ keys = [
         lazy.spawn(os.path.expanduser("~/.config/qtile/scripts/toggle_eink.sh")),
         desc="toggle e-ink mode",
     ),
-    Key(
-        [mod, "shift"],
-        "p",
-        lazy.spawn(os.path.expanduser("~/.local/bin/latexocr")),
-        desc="run latex ocr",
-    ),
     # scratchpads
     Key(
         [mod],
