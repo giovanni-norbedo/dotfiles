@@ -1,0 +1,72 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "oxocarbon OLED",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', monospace",
+    "lean4.alwaysAskBeforeInstallingLeanVersions": false,
+    "editor.unicodeHighlight.allowedCharacters": {
+        "è": true,
+        "é": true,
+        "ì": true,
+        "ò": true,
+        "ù": true,
+        "à": true
+    },
+    "workbench.browser.openLocalhostLinks": false,
+    "workbench.editorAssociations": {
+        "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+        "*.bin": "hexEditor.hexedit"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "python": true
+    },
+    "github.copilot.nextEditSuggestions.enabled": false,
+    "github.copilot.nextEditSuggestions.fixes": false,
+    "github.copilot.nextEditSuggestions.extendedRange": false,
+    "github.copilot.editor.enableCodeActions": false,
+    "github.copilot.renameSuggestions.triggerAutomatically": false,
+    "github.copilot.chat.backgroundAgent.enabled": false,
+    "github.copilot.chat.cloudAgent.enabled": false,
+    "github.copilot.chat.reviewAgent.enabled": false,
+    "github.copilot.chat.reviewSelection.enabled": false,
+    "github.copilot.chat.localIndex.enabled": false,
+    "github.copilot.chat.workspace.enableCodeSearch": false,
+    "github.copilot.chat.workspace.codeSearchExternalIngest.enabled": false,
+    "github.copilot.chat.cli.mcp.enabled": false,
+    "github.copilot.chat.copilotDebugCommand.enabled": false,
+    "github.copilot.chat.setupTests.enabled": false,
+    "chat.agent.enabled": false,
+    "chat.agentsControl.enabled": "hidden",
+    "chat.viewSessions.enabled": false,
+    "chat.unifiedAgentsBar.enabled": false,
+    "chat.mcp.access": "none",
+    "chat.mcp.autostart": "never",
+    "chat.plugins.enabled": false,
+    "chat.tips.enabled": false,
+    "chat.titleBar.signIn.enabled": false,
+    "chat.welcomePage.signIn.enabled": false,
+    "inlineChat.affordance": "off",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "none",
+    "workbench.tips.enabled": false,
+    "workbench.layoutControl.enabled": false,
+    "workbench.navigationControl.enabled": false,
+    "window.menuBarVisibility": "toggle",
+    "r.libPaths": [
+        "/home/venpy/.local/share/R/x86_64-pc-linux-gnu-library/4.6"
+    ]
+}
