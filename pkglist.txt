@@ -1,9 +1,7 @@
 7zip
 acpi
-aichat
 alsa-plugins
 alsa-utils
-android-sdk-build-tools
 android-tools
 anki
 antigravity-cli
@@ -31,14 +29,10 @@ cryptomator-bin
 cups
 cups-pk-helper
 curl-impersonate
-dart
 dkms
-docker
-docker-compose
 dosfstools
 dunst
 efibootmgr
-espanso-x11-bin
 expac
 eza
 ezone
@@ -61,8 +55,6 @@ gnome-chess
 gnome-keyring
 gnome-themes-extra
 gnumeric
-google-chrome
-google-chrome-dev
 gparted
 graphite-gtk-theme-black-rimless-compact-git
 graphviz
@@ -73,7 +65,6 @@ gthumb
 gtk-engine-murrine
 guvcview
 gvfs
-helm
 hplip
 htmlq
 htop
@@ -133,9 +124,7 @@ ntfs-3g
 nvtop
 obfuscate
 obsidian
-ollama
 os-prober
-oxygen-icons-svg
 pacman-contrib
 pandoc-cli
 papirus-folders
@@ -153,7 +142,6 @@ pngquant
 polkit-gnome
 positron-ide-bin
 power-profiles-daemon
-proton-vpn-gtk-app
 python-dbus-fast
 python-dbus-next
 python-iwlib
